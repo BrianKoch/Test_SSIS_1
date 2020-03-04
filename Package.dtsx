@@ -11,8 +11,8 @@
   DTS:LocaleID="1030"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{A1B1DA7A-2F95-4F9C-A09C-8DA670437DD3}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{43634954-4F5B-406C-B6EE-56F39A404D14}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -54,6 +54,17 @@
       <DTS:Variables />
       <DTS:Executables />
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container 1"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{635C3503-7C38-4161-A9E5-80B038B48EB5}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container 1">
+      <DTS:Variables />
+      <DTS:Executables />
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -64,6 +75,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Sequence Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{2F79361F-9C21-40EB-BA3C-7408DC531FAF}"
+      DTS:From="Package\Sequence Container"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Sequence Container 1" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -76,7 +95,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Foreach Loop Container\Data Flow Task"
@@ -87,40 +106,69 @@
           PanelSize="204.8,106.4"
           Size="204.8,149.6"
           Id="Package\Foreach Loop Container"
-          TopLeft="171.333326525159,133.813334396786" />
+          TopLeft="67.3333306577472,115.786667586856" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="204.8,55.2"
           Size="204.8,98.4"
           Id="Package\Sequence Container"
-          TopLeft="323.333320485222,370.240002942403" />
+          TopLeft="290.666655116612,333.4933359837" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="273.733326525159,283.413334396786">
+          TopLeft="169.733330657747,265.386667586856">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="151.999993960063,86.8266685456171"
+              EndConnector="223.333324458864,68.106668396844"
               Start="0,0"
-              End="151.999993960063,79.3266685456171">
+              End="223.333324458864,60.606668396844">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.4133342728086" />
+                    End="0,30.053334198422" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39.4133342728086"
-                    Point2="0,43.4133342728086"
-                    Point3="4,43.4133342728086" />
+                    Point1="0,30.053334198422"
+                    Point2="0,34.053334198422"
+                    Point3="4,34.053334198422" />
                   <mssgle:LineSegment
-                    End="147.999993960063,43.4133342728086" />
+                    End="219.333324458864,34.053334198422" />
                   <mssgle:CubicBezierSegment
-                    Point1="147.999993960063,43.4133342728086"
-                    Point2="151.999993960063,43.4133342728086"
-                    Point3="151.999993960063,47.4133342728086" />
+                    Point1="219.333324458864,34.053334198422"
+                    Point2="223.333324458864,34.053334198422"
+                    Point3="223.333324458864,38.053334198422" />
                   <mssgle:LineSegment
-                    End="151.999993960063,79.3266685456171" />
+                    End="223.333324458864,60.606668396844" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="204.8,55.2"
+          Size="204.8,98.4"
+          Id="Package\Sequence Container 1"
+          TopLeft="719.999971389772,325.866669008467" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="495.466655116612,378.880002496084">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="224.53331627316,0"
+              Start="0,0"
+              End="217.03331627316,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="217.03331627316,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
